@@ -31,7 +31,7 @@ services:
     ports:
       - "7778:7777"
     environment:
-      - world=/config/Expert.wld
+      - world=Expert.wld
     volumes:
       - /mnt/data/terraria/Expert:/config
     container_name: "terraria_expert"
@@ -44,7 +44,7 @@ services:
     ports:
       - "7779:7777"
     environment:
-      - world=/config/Master.wld
+      - world=Master.wld
     volumes:
       - /mnt/data/terraria/Master:/config
     container_name: "terraria_master"
@@ -57,7 +57,7 @@ services:
     ports:
       - "7780:7777"
     environment:
-      - world=/config/Arcadia.wld
+      - world=Arcadia.wld
     volumes:
       - /mnt/data/terraria/Arcadia:/config
     container_name: "terraria_arcadia"
@@ -70,7 +70,7 @@ services:
     ports:
       - "7781:7777"
     environment:
-      - world=/config/Journey.wld
+      - world=Journey.wld
     volumes:
       - /mnt/data/terraria/Journey:/config
     container_name: "terraria_journey"
