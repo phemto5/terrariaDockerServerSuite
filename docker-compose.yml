@@ -1,34 +1,57 @@
-version: '3'
+version: "3"
 services:
   Fresh:
-    image: ryshe/terraria:latest -world /world/Anderson_Fresh.wld
-    #init: -world /world/Anderson_Fresh.wld
+    image: beardedio/terraria:vanilla-latest
     ports:
       - "7776:7777"
+    environment:
+      - world=/world/Anderson_Fresh.wld
     volumes:
+      - /mnt/storage/terraria/config:/config
       - /mnt/storage/terraria/world:/world
     container_name: "terraria_fresh"
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
 
   Basic:
-    image: ryshe/terraria:latest -world /world/Anderson_Basic.wld
+    image: beardedio/terraria:vanilla-latest
     ports:
       - "7777:7777"
+    environment:
+      - world=/world/Anderson_Basic.wld
     volumes:
+      - /mnt/storage/terraria/config:/config
       - /mnt/storage/terraria/world:/world
     container_name: "terraria_basic"
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
 
   Expert:
-    image: ryshe/terraria:latest -world /world/Anderson_Expert.wld
+    image: beardedio/terraria:vanilla-latest
     ports:
       - "7778:7777"
+    environment:
+      - world=/world/Anderson_Expert.wld
     volumes:
+      - /mnt/storage/terraria/config:/config
       - /mnt/storage/terraria/world:/world
     container_name: "terraria_expert"
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
 
   Arcadia:
-    image: ryshe/terraria:latest -world /world/Arcadia.wld
+    image: beardedio/terraria:vanilla-latest
     ports:
       - "7779:7777"
+    environment:
+      - world=/world/Arcadia.wld
     volumes:
+      - /mnt/storage/terraria/config:/config
       - /mnt/storage/terraria/world:/world
     container_name: "terraria_arcadia"
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
