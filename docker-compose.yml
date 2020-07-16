@@ -5,7 +5,7 @@ services:
     ports:
       - "7776:7777"
     environment:
-      - world=Fresh.wld
+      world: Fresh.wld
     volumes:
       - /mnt/storage/terraria/Fresh:/config
     container_name: "terraria_fresh"
