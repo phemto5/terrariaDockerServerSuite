@@ -7,7 +7,7 @@ services:
     environment:
       world: Fresh.wld
     volumes:
-      - /mnt/storage/terraria/Fresh:/config
+      - /mnt/data/terraria/Fresh:/config
     container_name: "terraria_fresh"
     restart: unless-stopped
     tty: true
@@ -20,7 +20,7 @@ services:
     environment:
       - world=Classic.wld
     volumes:
-      - /mnt/storage/terraria/Classic:/config
+      - /mnt/data/terraria/Classic:/config
     container_name: "terraria_classic"
     restart: unless-stopped
     tty: true
@@ -33,7 +33,7 @@ services:
     environment:
       - world=/config/Expert.wld
     volumes:
-      - /mnt/storage/terraria/Expert:/config
+      - /mnt/data/terraria/Expert:/config
     container_name: "terraria_expert"
     restart: unless-stopped
     tty: true
@@ -46,7 +46,7 @@ services:
     environment:
       - world=/config/Master.wld
     volumes:
-      - /mnt/storage/terraria/Master:/config
+      - /mnt/data/terraria/Master:/config
     container_name: "terraria_master"
     restart: unless-stopped
     tty: true
@@ -59,7 +59,7 @@ services:
     environment:
       - world=/config/Arcadia.wld
     volumes:
-      - /mnt/storage/terraria/Arcadia:/config
+      - /mnt/data/terraria/Arcadia:/config
     container_name: "terraria_arcadia"
     restart: unless-stopped
     tty: true
@@ -72,7 +72,7 @@ services:
     environment:
       - world=/config/Journey.wld
     volumes:
-      - /mnt/storage/terraria/Journey:/config
+      - /mnt/data/terraria/Journey:/config
     container_name: "terraria_journey"
     restart: unless-stopped
     tty: true
