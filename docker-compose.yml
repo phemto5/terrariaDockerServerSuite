@@ -5,7 +5,7 @@ services:
     ports:
       - "7776:7777"
     environment:
-      - world=/config/Anderson_Fresh.wld
+      - world=/config/Fresh.wld
     volumes:
       - /mnt/storage/terraria/Fresh:/config
     container_name: "terraria_fresh"
@@ -18,7 +18,7 @@ services:
     ports:
       - "7777:7777"
     environment:
-      - world=/config/Anderson_Classic.wld
+      - world=/config/Classic.wld
     volumes:
       - /mnt/storage/terraria/Classic:/config
     container_name: "terraria_classic"
@@ -31,7 +31,7 @@ services:
     ports:
       - "7778:7777"
     environment:
-      - world=/config/Anderson_Expert.wld
+      - world=/config/Expert.wld
     volumes:
       - /mnt/storage/terraria/Expert:/config
     container_name: "terraria_expert"
@@ -39,12 +39,12 @@ services:
     tty: true
     stdin_open: true
 
-  Expert:
+  Master:
     image: beardedio/terraria:vanilla-latest
     ports:
       - "7779:7777"
     environment:
-      - world=/config/Anderson_Master.wld
+      - world=/config/Master.wld
     volumes:
       - /mnt/storage/terraria/Master:/config
     container_name: "terraria_master"
@@ -65,12 +65,12 @@ services:
     tty: true
     stdin_open: true
 
-  Expert:
+  Journey:
     image: beardedio/terraria:vanilla-latest
     ports:
       - "7781:7777"
     environment:
-      - world=/config/Anderson_Journey.wld
+      - world=/config/Journey.wld
     volumes:
       - /mnt/storage/terraria/Journey:/config
     container_name: "terraria_journey"
