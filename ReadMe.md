@@ -1,0 +1,4 @@
+-- Clone the repo
+-- in the docker compose file make sure that you have the volumnes mounted where you have you maps for each instance
+-- then run the deploy script or copy the configs to the maps they belong to.
+-- then start up the docker compose script
