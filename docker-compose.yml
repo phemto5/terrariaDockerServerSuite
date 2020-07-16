@@ -5,10 +5,9 @@ services:
     ports:
       - "7776:7777"
     environment:
-      - world=/world/Anderson_Fresh.wld
+      - world=/config/Anderson_Fresh.wld
     volumes:
-      - /mnt/storage/terraria/config:/config
-      - /mnt/storage/terraria/world:/world
+      - /mnt/storage/terraria/Fresh:/config
     container_name: "terraria_fresh"
     restart: unless-stopped
     tty: true
@@ -19,11 +18,10 @@ services:
     ports:
       - "7777:7777"
     environment:
-      - world=/world/Anderson_Basic.wld
+      - world=/config/Anderson_Classic.wld
     volumes:
-      - /mnt/storage/terraria/config:/config
-      - /mnt/storage/terraria/world:/world
-    container_name: "terraria_basic"
+      - /mnt/storage/terraria/Classic:/config
+    container_name: "terraria_classic"
     restart: unless-stopped
     tty: true
     stdin_open: true
@@ -33,11 +31,23 @@ services:
     ports:
       - "7778:7777"
     environment:
-      - world=/world/Anderson_Expert.wld
+      - world=/config/Anderson_Expert.wld
     volumes:
-      - /mnt/storage/terraria/config:/config
-      - /mnt/storage/terraria/world:/world
+      - /mnt/storage/terraria/Expert:/config
     container_name: "terraria_expert"
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
+
+  Expert:
+    image: beardedio/terraria:vanilla-latest
+    ports:
+      - "7779:7777"
+    environment:
+      - world=/config/Anderson_Master.wld
+    volumes:
+      - /mnt/storage/terraria/Master:/config
+    container_name: "terraria_master"
     restart: unless-stopped
     tty: true
     stdin_open: true
@@ -45,13 +55,25 @@ services:
   Arcadia:
     image: beardedio/terraria:vanilla-latest
     ports:
-      - "7779:7777"
+      - "7780:7777"
     environment:
-      - world=/world/Arcadia.wld
+      - world=/config/Arcadia.wld
     volumes:
-      - /mnt/storage/terraria/config:/config
-      - /mnt/storage/terraria/world:/world
+      - /mnt/storage/terraria/Arcadia:/config
     container_name: "terraria_arcadia"
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
+
+  Expert:
+    image: beardedio/terraria:vanilla-latest
+    ports:
+      - "7781:7777"
+    environment:
+      - world=/config/Anderson_Journey.wld
+    volumes:
+      - /mnt/storage/terraria/Journey:/config
+    container_name: "terraria_journey"
     restart: unless-stopped
     tty: true
     stdin_open: true
