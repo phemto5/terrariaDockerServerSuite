@@ -1,0 +1,34 @@
+version: '3'
+services:
+  Fresh:
+    image: ryshe/terraria:latest -world /world/Anderson_Fresh.wld
+    #init: -world /world/Anderson_Fresh.wld
+    ports:
+      - "7776:7777"
+    volumes:
+      - /mnt/storage/terraria/world:/world
+    container_name: "terraria_fresh"
+
+  Basic:
+    image: ryshe/terraria:latest -world /world/Anderson_Basic.wld
+    ports:
+      - "7777:7777"
+    volumes:
+      - /mnt/storage/terraria/world:/world
+    container_name: "terraria_basic"
+
+  Expert:
+    image: ryshe/terraria:latest -world /world/Anderson_Expert.wld
+    ports:
+      - "7778:7777"
+    volumes:
+      - /mnt/storage/terraria/world:/world
+    container_name: "terraria_expert"
+
+  Arcadia:
+    image: ryshe/terraria:latest -world /world/Arcadia.wld
+    ports:
+      - "7779:7777"
+    volumes:
+      - /mnt/storage/terraria/world:/world
+    container_name: "terraria_arcadia"
