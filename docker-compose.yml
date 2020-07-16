@@ -18,7 +18,7 @@ services:
     ports:
       - "7777:7777"
     environment:
-      - world=/config/Classic.wld
+      - world=Classic.wld
     volumes:
       - /mnt/storage/terraria/Classic:/config
     container_name: "terraria_classic"
