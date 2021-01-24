@@ -90,8 +90,8 @@ services:
     networks:
       - vmnw
 
-  network:
-    vmnw:
-      external:
-        name: vm_nw
+networks:
+  vmnw:
+    external:
+      name: vm_nw
 
