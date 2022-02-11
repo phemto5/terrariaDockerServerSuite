@@ -1,34 +1,34 @@
 version: "3"
 services:
-  Fresh:
-    image: beardedio/terraria:vanilla-latest
-    ports:
-      - "7776:7777"
-    environment:
-      world: Fresh.wld
-    volumes:
-      - /mnt/data/terraria/Fresh:/config
-    container_name: "terraria_fresh"
-    restart: unless-stopped
-    tty: true
-    stdin_open: true
-    networks:
-      - vmnw
-
-  Classic:
-    image: beardedio/terraria:vanilla-latest
-    ports:
-      - "7777:7777"
-    environment:
-      - world=Classic.wld
-    volumes:
-      - /mnt/data/terraria/Classic:/config
-    container_name: "terraria_classic"
-    restart: unless-stopped
-    tty: true
-    stdin_open: true
-    networks:
-      - vmnw
+  #  Fresh:
+  #    image: beardedio/terraria:vanilla-latest 
+  #    ports:
+  #      - "7776:7777"
+  #    environment:
+  #      world: Fresh.wld
+  #    volumes:
+  #      - terrariaFresh:/config
+  #    container_name: "terraria_fresh"
+  #    restart: unless-stopped
+  #    tty: true
+  #    stdin_open: true
+  #    networks:
+  #      - vmnw
+  #
+  #  Classic:
+  #    image: beardedio/terraria:vanilla-latest
+  #    ports:
+  #      - "7777:7777"
+  #    environment:
+  #      - world=Classic.wld
+  #    volumes:
+  #      - terrariaClassic:/config
+  #    container_name: "terraria_classic"
+  #    restart: unless-stopped
+  #    tty: true
+  #    stdin_open: true
+  #    networks:
+  #      - vmnw
 
   Expert:
     image: beardedio/terraria:vanilla-latest
@@ -37,43 +37,43 @@ services:
     environment:
       - world=Expert.wld
     volumes:
-      - /mnt/data/terraria/Expert:/config
+      - terrariaExpert:/config
     container_name: "terraria_expert"
     restart: unless-stopped
     tty: true
     stdin_open: true
     networks:
-      - vmnw
+     - vmnw
 
-  Master:
-    image: beardedio/terraria:vanilla-latest
-    ports:
-      - "7779:7777"
-    environment:
-      - world=Master.wld
-    volumes:
-      - /mnt/data/terraria/Master:/config
-    container_name: "terraria_master"
-    restart: unless-stopped
-    tty: true
-    stdin_open: true
-    networks:
-      - vmnw
-
-  Arcadia:
-    image: beardedio/terraria:vanilla-latest
-    ports:
-      - "7780:7777"
-    environment:
-      - world=Arcadia.wld
-    volumes:
-      - /mnt/data/terraria/Arcadia:/config
-    container_name: "terraria_arcadia"
-    restart: unless-stopped
-    tty: true
-    stdin_open: true
-    networks:
-      - vmnw
+       #  Master:
+       #    image: beardedio/terraria:vanilla-latest
+       #    ports:
+       #      - "7779:7777"
+       #    environment:
+       #      - world=Master.wld
+       #    volumes:
+       #      - terrariaMaster:/config
+       #    container_name: "terraria_master"
+       #    restart: unless-stopped
+       #    tty: true
+       #    stdin_open: true
+       #    networks:
+       #      - vmnw
+       #
+       #  Arcadia:
+       #    image: beardedio/terraria:vanilla-latest
+       #    ports:
+       #      - "7780:7777"
+       #    environment:
+       #      - world=Arcadia.wld
+       #    volumes:
+       #      - terrariaArcadia:/config
+       #    container_name: "terraria_arcadia"
+       #    restart: unless-stopped
+       #    tty: true
+       #    stdin_open: true
+       #    networks:
+       #      - vmnw
 
   Journey:
     image: beardedio/terraria:vanilla-latest
@@ -82,7 +82,7 @@ services:
     environment:
       - world=Journey.wld
     volumes:
-      - /mnt/data/terraria/Journey:/config
+      - terrariaJourney:/config
     container_name: "terraria_journey"
     restart: unless-stopped
     tty: true
@@ -90,8 +90,42 @@ services:
     networks:
       - vmnw
 
+        #  AlexWorld:
+        #    image: beardedio/terraria:vanilla-latest
+        #    ports:
+        #      - "7782:7777"
+        #    environment:
+        #      - world=alexworld.wld
+        #    volumes:
+        #      - /terraria/alex:/config
+        #    container_name: "terraria_alex"
+        #    hostname: "terraria_alex"
+        #    restart: unless-stopped
+        #    tty: true
+        #    stdin_open: true
+        #    networks:
+        #      - vmnw
+
 networks:
   vmnw:
     external:
       name: vm_nw
-
+volumes:
+  terrariaJourney:
+    external: 
+      name: terrariaJourney
+        #  terrariaArcadia:
+        #    external:
+        #      name: terrariaArcadia
+        #  terrariaMaster:
+        #    external:
+        #      name: terrariaMaster
+  terrariaExpert:
+    external:
+      name: terrariaExpert
+        #  terrariaClassic:
+        #    external:
+        #      name: terrariaClassic
+        #  terrariaFresh:
+        #    external:
+        #      name: terrariaFresh
