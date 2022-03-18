@@ -32,6 +32,7 @@ spec:
         name: terraria-expert
         ports:
         - containerPort: 7777
+          name: t-expert-port
         resources: {}
         volumeMounts:
         - mountPath: /config

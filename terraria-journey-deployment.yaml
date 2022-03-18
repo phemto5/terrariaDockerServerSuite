@@ -32,6 +32,7 @@ spec:
         name: terraria-journey
         ports:
         - containerPort: 7777
+          name: t-jouney-port
         resources: {}
         volumeMounts:
         - mountPath: /config

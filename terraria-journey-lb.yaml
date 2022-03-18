@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: terraria-jouney-lb
+  namespace: games
+spec:
+  ports:
+  - name: terraria-jouney
+    nodePort: 30788
+    port: 7788
+    protocol: TCP
+    targetPort: t-jouney-port
+  selector:
+    io.kompose.service: terraria-jouney
+  sessionAffinity: None
+  type: LoadBalancer
