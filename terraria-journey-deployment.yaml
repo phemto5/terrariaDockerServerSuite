@@ -4,15 +4,14 @@ metadata:
   annotations:
     kompose.cmd: /snap/kompose/19/kompose-linux-amd64 convert -f docker-compose.yml
     kompose.version: 1.21.0 (992df58d8)
-  creationTimestamp: null
   labels:
-    io.kompose.service: expert
-  name: expert
+    io.kompose.service: terraria-journey
+  name: terraria-journey
 spec:
   replicas: 1
   selector:
     matchLabels:
-      io.kompose.service: expert
+      io.kompose.service: terraria-journey
   strategy:
     type: Recreate
   template:
@@ -20,30 +19,26 @@ spec:
       annotations:
         kompose.cmd: /snap/kompose/19/kompose-linux-amd64 convert -f docker-compose.yml
         kompose.version: 1.21.0 (992df58d8)
-      creationTimestamp: null
       labels:
-        io.kompose.network/vm_nw: "true"
-        io.kompose.service: expert
+        io.kompose.service: terraria-journey
     spec:
       containers:
       - env:
         - name: world
-          value: Expert.wld
+          value: Journey.wld
         image: beardedio/terraria:vanilla-latest
-        imagePullPolicy: ""
-        name: terraria-expert
+        imagePullPolicy: "Always"
+        name: terraria-journey
         ports:
         - containerPort: 7777
         resources: {}
-        stdin: true
-        tty: true
         volumeMounts:
         - mountPath: /config
-          name: terrariaExpert
+          name: terrariaJourney
       restartPolicy: Always
       serviceAccountName: ""
       volumes:
-      - name: terrariaExpert
+      - name: terrariaJourney
         persistentVolumeClaim:
-          claimName: terrariaExpert
+          claimName: terrariaJourney
 status: {}

@@ -4,16 +4,13 @@ metadata:
   annotations:
     kompose.cmd: /snap/kompose/19/kompose-linux-amd64 convert -f docker-compose.yml
     kompose.version: 1.21.0 (992df58d8)
-  creationTimestamp: null
   labels:
-    io.kompose.service: expert
-  name: expert
+    io.kompose.service: terraria-journey
+  name: terraria-journey
 spec:
   ports:
-  - name: "7778"
-    port: 7778
+  - name: "7781"
+    port: 7781
     targetPort: 7777
   selector:
-    io.kompose.service: expert
-status:
-  loadBalancer: {}
+    io.kompose.service: terraria-journey

@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  creationTimestamp: null
-  labels:
-    io.kompose.service: terrariaExpert
-  name: terrariaExpert
+  name: terraria-expert-pvc
+  namespace: default
 spec:
   accessModes:
   - ReadWriteOnce
+  - ReadWriteMany
   resources:
     requests:
       storage: 100Mi
-status: {}
+  volumeMode: Filesystem
+  volumeName: terraria-expert-pv
