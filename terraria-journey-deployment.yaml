@@ -32,17 +32,17 @@ spec:
         name: terraria-journey
         ports:
         - containerPort: 7777
-          name: t-jouney-port
+          name: t-journey-port
         resources: {}
         volumeMounts:
         - mountPath: /config
-          name: terraria-journey
+          name: t-journey
         stdin: true
         tty: true  
       restartPolicy: Always
       serviceAccountName: ""
       volumes:
-      - name: terraria-journey
+      - name: t-journey
         persistentVolumeClaim:
           claimName: terraria-journey-pvc
 status: {}
