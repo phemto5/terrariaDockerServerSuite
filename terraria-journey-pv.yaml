@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: terraria-journey-pv
+spec:
+  accessModes:
+  - ReadWriteOnce
+  - ReadWriteMany
+  capacity:
+    storage: 100Mi
+  local:
+    path: /mnt/docker/volumes/terrariaJourney/_data
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - as-r610
+  persistentVolumeReclaimPolicy: Retain
+  volumeMode: Filesystem

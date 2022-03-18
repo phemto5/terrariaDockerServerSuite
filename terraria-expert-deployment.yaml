@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: /snap/kompose/19/kompose-linux-amd64 convert -f docker-compose.yml
+    kompose.version: 1.21.0 (992df58d8)
+  labels:
+    io.kompose.service: terraria-expert
+  name: terraria-expert
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: terraria-expert
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: /snap/kompose/19/kompose-linux-amd64 convert -f docker-compose.yml
+        kompose.version: 1.21.0 (992df58d8)
+      labels:
+        io.kompose.service: terraria-expert
+    spec:
+      containers:
+      - env:
+        - name: world
+          value: Expert.wld
+        image: beardedio/terraria:vanilla-latest
+        imagePullPolicy: "Always"
+        name: terraria-expert
+        ports:
+        - containerPort: 7777
+        resources: {}
+        volumeMounts:
+        - mountPath: /config
+          name: terrariaExpert
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes:
+      - name: terrariaExpert
+        persistentVolumeClaim:
+          claimName: terrariaExpert
+status: {}
