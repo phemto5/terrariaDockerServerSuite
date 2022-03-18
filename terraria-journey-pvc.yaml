@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: terraria-journey-pvc
-  namespace: default
+  namespace: games
 spec:
   accessModes:
   - ReadWriteOnce
