@@ -34,11 +34,11 @@ spec:
         resources: {}
         volumeMounts:
         - mountPath: /config
-          name: terrariaJourney
+          name: terraria-journey
       restartPolicy: Always
       serviceAccountName: ""
       volumes:
-      - name: terrariaJourney
+      - name: terraria-journey
         persistentVolumeClaim:
-          claimName: terrariaJourney
+          claimName: terraria-journey-pvc
 status: {}
