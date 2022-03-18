@@ -34,11 +34,11 @@ spec:
         resources: {}
         volumeMounts:
         - mountPath: /config
-          name: terrariaExpert
+          name: terraria-expert
       restartPolicy: Always
       serviceAccountName: ""
       volumes:
-      - name: terrariaExpert
+      - name: terraria-expert
         persistentVolumeClaim:
-          claimName: terrariaExpert
+          claimName: terraria-expert-pvc
 status: {}
