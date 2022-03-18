@@ -35,6 +35,8 @@ spec:
         volumeMounts:
         - mountPath: /config
           name: terraria-journey
+        stdin: true
+        tty: true  
       restartPolicy: Always
       serviceAccountName: ""
       volumes:
